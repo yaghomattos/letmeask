@@ -13,7 +13,7 @@ export function Home() {
   const history = useHistory();
   const { user, signInWithGoogle } = useAuth();
 
-  async function navigateToNewRoom() {
+  async function handleCreateRoom() {
     if (!user) {
       await signInWithGoogle();
     }
@@ -31,7 +31,7 @@ export function Home() {
       <main>
         <div className="main-content">
           <img src={logoImg} alt="Letmeask" />
-          <button onClick={navigateToNewRoom} className="create-room">
+          <button onClick={handleCreateRoom} className="create-room">
             <img src={googleIconImg} alt="Logo Google" />
             Crie sua sala com o Google
           </button>
